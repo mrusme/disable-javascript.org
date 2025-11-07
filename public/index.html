@@ -52,6 +52,22 @@
       </li>
     </ul>
     <hr>
+    <h2 id="ublock">Using uBlock Origin</h2>
+    <p>
+      If you are using Firefox, Opera, Microsoft Edge or any Chromium-based browser that still supports Manifest v2 and hence is able to run <a href="https://ublockorigin.com" title="uBlock Origin">uBlock Origin</a> you can instead follow these steps:
+    </p>
+    <ol>
+      <li>Click the uBlock Origin icon to open the popup menu and click the gears icon to open the dashboard</li>
+      <li>
+        Click <em>Settings</em>
+      </li>
+      <li>
+        Scroll down to <em>Default behavior</em> and check <em>Disable JavaScript</em>
+      </li>
+    </ol>
+    <p>
+      When browsing the web and requiring JavaScript for a website that you trust, click the uBlock Origin icon and click the rightmost <em>"&lt;/&gt;"</em> icon, then press the <em>refresh</em> button above it to reload the site with JavaScript enabled.
+    </p>
     <h2 id="chrome">Chrome &amp; Chromium</h2>
     <ol>
       <li>Click the ⋮ on the top right to open the menu</li>
@@ -74,22 +90,6 @@
     <p>
       When browsing the web and requiring JavaScript for a website that you trust, click the <em>"i"</em> button on the left side of the address bar and click <em>Site settings</em>. There, change the value for <em>JavaScript</em> to <em>Allow</em>.
     </p>
-    <h3>Using uBlock Origin</h3>
-    <p>
-      If you are using a Chromium-based browser that still supports Manifest v2 and hence is able to run <a href="" title="uBlock Origin">uBlock Origin</a> you can instead follow these steps:
-    </p>
-    <ol>
-      <li>Click the uBlock Origin icon to open the popup menu and click the gears icon to open the dashboard</li>
-      <li>
-        Click <em>Settings</em>
-      </li>
-      <li>
-        Scroll down to <em>Default behavior</em> and check <em>Disable JavaScript</em>
-      </li>
-    </ol>
-    <p>
-      When browsing the web and requiring JavaScript for a website that you trust, click the uBlock Origin icon and click the rightmost <em>"&lt;/&gt;"</em> icon, then press the <em>refresh</em> button above it to reload the site with JavaScript enabled.
-    </p>
     <h2 id="firefox">Firefox</h2>
     <ol>
       <li>TODO</li>
@@ -104,7 +104,18 @@
     </ol>
     <h2 id="ie">Internet Exploder</h2>
     <ol>
-      <li>TODO</li>
+      <li>
+        Visit <a href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/"
+    title="ungoogled-chromium">https://ungoogled-software.github.io/ungoogled-chromium-binaries/</a>
+      </li>
+      <li>Download the latest version available for your platform and install it</li>
+      <li>
+        Follow the steps to <a href="https://github.com/NeverDecaf/chromium-web-store?tab=readme-ov-file#read-this-first"
+    title="Chromium Web Store">install the Chromium Web Store</a>
+      </li>
+      <li>
+        Continue by <a href="#ublock" title="uBlock Origin">installing and configuring uBlock Origin</a>
+      </li>
     </ol>
     <h2 id="devs">Instructions for web developers</h2>
     <p>
@@ -370,7 +381,7 @@ function closeDisablejsInfo() {
 </code>
     </pre>
     <p>
-    Make sure to style <code>div#disablejs</code> according to your needs. The required assets can be found <a href="favicons.tar.gz" title="favicons.tar.gz">here</a> and should be extracted into the folder of your website that is accessible via <code>/images/disablejs/</code>. Alternatively, feel free to adjust the <code>let favicon = "...";</code> variables.
+      Make sure to style <code>div#disablejs</code> according to your needs. The required assets can be found <a href="favicons.tar.gz" title="favicons.tar.gz">here</a> and should be extracted into the folder of your website that is accessible via <code>/images/disablejs/</code>. Alternatively, feel free to adjust the <code>let favicon = "...";</code> variables.
     </p>
     <hr>
     <p>
