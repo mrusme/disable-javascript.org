@@ -1,0 +1,41 @@
+ul.browsers {
+  list-style-type: none;
+  text-align: center;
+}
+
+li.browser {
+  display: inline-block;
+}
+
+a.browser {
+  display: block;
+  background: url(../images/browsers.png) no-repeat;
+  overflow: hidden;
+  text-align: center;
+  line-height: 170px;
+  text-decoration: none;
+  color: #666;
+  font-size: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+a.chrome {
+  background-position: -174px 20px;
+}
+
+a.firefox {
+  background-position: -74px 20px;
+}
+
+a.safari {
+  background-position: -374px 20px;
+}
+
+a.opera {
+  background-position: -274px 20px;
+}
+
+a.ie {
+  background-position: 24px 20px;
+}
