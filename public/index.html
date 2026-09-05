@@ -1,490 +1,527 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Disable JavaScript</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/djs.css">
-    <meta name="description"
-          content="Instructions on how to disable (deactivate) JavaScript in web browser and why.">
-    <meta property="og:site_name" content="Disable JavaScript">
-    <meta property="og:title" content="Disable JavaScript">
-    <meta property="og:description"
-          content="Instructions on how to disable (deactivate) JavaScript in web browser and why.">
-    <meta property="og:image"
-          content="https://disable-javascript.org/images/disable-javascript.webp">
-    <meta property="og:url" content="https://disable-javascript.org">
-    <meta property="og:type" content="website">
-    <meta name="twitter:title" content="Disable JavaScript">
-    <meta name="twitter:description"
-          content="Instructions on how to disable (deactivate) JavaScript in web browser and why.">
-    <meta name="twitter:image"
-          content="https://disable-javascript.org/images/disable-javascript.webp">
-    <meta name="twitter:image:alt" content="Disable JavaScript">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="images/favicon.ico?123" sizes="any">
-    <meta name="theme-color" content="#fffffff">
-  </head>
-  <body>
-    <h1>How to disable JavaScript in your browser</h1>
-    <p>
-      Nowadays almost all web pages contain JavaScript, a scripting programming language that runs arbitrary code, through the web browser, on the visitor's computer. It is supposed to make web pages functional for specific purposes but it has proven its potential to cause significant harm to users time and time again:
-    </p>
-    <ul>
-      <li>
-        <a href="https://www.bleepingcomputer.com/news/security/popular-javascript-library-expr-eval-vulnerable-to-rce-flaw/">Popular JavaScript library expr-eval vulnerable to RCE flaw</a>
-      </li>
-      <li>
-        <a href="https://www.csoonline.com/article/4086415/malicious-npm-packages-contain-vidar-infostealer-2.html">Malicious npm packages contain Vidar infostealer</a>
-      </li>
-      <li>
-        <a href="https://thehackernews.com/2025/09/40-npm-packages-compromised-in-supply.html">Self-Replicating Worm Hits 180+ npm Packages to Steal Credentials in Latest Supply Chain Attack</a>
-      </li>
-      <li>
-        <a href="https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised">npm debug and chalk packages compromised</a>
-      </li>
-      <li>
-        <a href="https://www.mozilla.org/en-US/security/advisories/mfsa2025-64/#CVE-2025-9181">CVE-2025-9181: Uninitialized memory in the JavaScript Engine component</a>
-      </li>
-      <li>
-        <a href="https://www.securityweek.com/high-severity-vulnerabilities-patched-in-chrome-firefox/">High-Severity Vulnerabilities Patched in Chrome, Firefox</a>
-      </li>
-      <li>
-        <a href="https://cvefeed.io/vuln/detail/CVE-2025-7656">CVE-2025-7656: Google Chrome V8 Integer Overflow Heap Corruption</a>
-      </li>
-      <li>
-        <a href="https://www.mozilla.org/en-US/security/advisories/mfsa2025-59/#CVE-2025-8027">CVE-2025-8027: JavaScript engine only wrote partial return value to stack</a>
-      </li>
-      <li>
-        <a href="https://www.thezdi.com/blog/2025/7/14/cve-2025-4919-corruption-via-math-space-in-mozilla-firefohttps://www.thezdi.com/blog/2025/7/14/cve-2025-4919-corruption-via-math-space-in-mozilla-firefoxx">CVE-2025-4919: Corruption via Math Space in Mozilla Firefox</a>
-      </li>
-      <li>
-        <a href="https://thehackernews.com/2025/07/google-patches-critical-zero-day-flaw.html">Chrome Zero-Day CVE-2025-6554 Under Active Attack — Google Issues Security Update</a>
-      </li>
-      <li>
-        <a href="https://thehackernews.com/2025/06/new-chrome-zero-day-actively-exploited.html">New Chrome Zero-Day Actively Exploited; Google Issues Emergency Out-of-Band Patch</a>
-      </li>
-      <li>
-        <a href="https://thehackernews.com/2025/05/new-chrome-vulnerability-enables-cross.html">New Chrome Vulnerability Enables Cross-Origin Data Leak via Loader Referrer Policy</a>
-      </li>
-      <li>
-        <a href="https://www.rapid7.com/db/vulnerabilities/google-chrome-cve-2025-0291/">Google Chrome Vulnerability: CVE-2025-0291 Type Confusion in V8</a>
-      </li>
-      <li>
-        <a href="https://leaky.page">This site hosts a proof of concept for the Spectre vulnerability written in JavaScript</a>
-      </li>
-      <li>
-        <a href="https://github.com/isec-tugraz/rowhammerjs">Rowhammer.js - A Remote Software-Induced Fault Attack in JavaScript</a>
-      </li>
-      <li>
-        ...
-      </li>
-    </ul>
-    <p>
-      Here you can find instructions on how to disable (deactivate) JavaScript by default in five most commonly used browsers, and how to only enable it for websites that you know and trust.
-    </p>
-    <hr>
-    <ul class="browsers">
-      <li class="browser">
-        <a class="browser chrome" href="#chrome" title="Chrome &amp; Chromium"></a>
-      </li>
-      <li class="browser">
-        <a class="browser firefox" href="#firefox" title="Firefox"></a>
-      </li>
-      <li class="browser">
-        <a class="browser safari" href="#safari" title="Safari"></a>
-      </li>
-      <li class="browser">
-        <a class="browser opera" href="#opera" title="Opera"></a>
-      </li>
-      <li class="browser">
-        <a class="browser ie" href="#ie" title="Internet Exploder"></a>
-      </li>
-    </ul>
-    <hr>
-    <h2 id="ublock">uBlock Origin</h2>
-    <p>
-      If you are using Firefox, Opera, Microsoft Edge or any Chromium-based browser that still supports Manifest v2 and hence is able to run <a href="https://ublockorigin.com" title="uBlock Origin">uBlock Origin</a> you can instead follow these steps:
-    </p>
-    <ol>
-      <li>Click the uBlock Origin icon to open the popup menu and click the gears icon to open the dashboard</li>
-      <li>
-        Click <em>Settings</em>
-      </li>
-      <li>
-        Scroll down to <em>Default behavior</em> and check <em>Disable JavaScript</em>
-      </li>
-    </ol>
-    <p>
-      When browsing the web and requiring JavaScript for a website that you trust, click the uBlock Origin icon and click the rightmost <em>"&lt;/&gt;"</em> icon, then press the <em>refresh</em> button above it to reload the site with JavaScript enabled.
-    </p>
-    <h2 id="noscript">NoScript</h2>
-    <p>
-      If you are using Firefox, Opera, Microsoft Edge or any Chromium-based browser download <a href="https://noscript.net/getit/" title="NoScript">NoScript</a> and familiarize yourself with its <a href="https://noscript.net/usage/" title="NoScript Usage">usage</a>.
-    </p>
-    <h2 id="chrome">Chrome &amp; Chromium</h2>
-    <ol>
-      <li>Click the ⋮ on the top right to open the menu</li>
-      <li>
-        Click <em>Settings</em>
-      </li>
-      <li>
-        On the left side menu, click <em>Privacy and security</em>
-      </li>
-      <li>
-        Click <em>Site settings</em>
-      </li>
-      <li>
-        Scroll down to <em>Content</em> and click <em>JavaScript</em>
-      </li>
-      <li>
-        Under <em>Default behavior</em> select <em>Don't allow sites to use JavaScript</em>
-      </li>
-    </ol>
-    <p>
-      When browsing the web and requiring JavaScript for a website that you trust, click the <em>"i"</em> button on the left side of the address bar and click <em>Site settings</em>. There, change the value for <em>JavaScript</em> to <em>Allow</em>.
-    </p>
-    <h2 id="firefox">Firefox</h2>
-    <ol>
-      <li>
-        In the address bar, type <code>about:config</code> and press <em>Enter</em>
-      </li>
-      <li>
-        Click <em>"I'll be careful, I promise"</em> if a warning message appears
-      </li>
-      <li>
-        In the search box, search for <code>javascript.enabled</code>
-      </li>
-      <li>
-        Toggle the <code>javascript.enabled</code> preference (right-click and select <em>Toggle</em> or double-click the preference) to change the value from <em>true</em> to <em>false</em>
-      </li>
-    </ol>
-    <p>
-      Because this turns off JavaScript globally in Firefox, it is advisable to use <a href="#ublock" title="uBlock Origin">uBlock Origin</a> instead.
-    </p>
-    <h2 id="safari">Safari</h2>
-    <ol>
-      <li>
-        On the web browser menu click on the <em>Edit</em> and select <em>Preferences</em>
-      </li>
-      <li>
-        In the <em>Preferences</em> window select the <em>Security</em> tab
-      </li>
-      <li>
-        In the <em>Security</em> tab section <em>Web content</em> unmark the <em>Enable JavaScript</em> checkbox
-      </li>
-    </ol>
-    <h2 id="opera">Opera</h2>
-    <ol>
-      <li>
-        Go to <em>Settings</em>
-      </li>
-      <li>
-        Click <em>Advanced</em> in the left sidebar, and click <em>Privacy & security</em>
-      </li>
-      <li>
-        Under <em>Privacy and security</em>, click <em>Site settings</em>
-      </li>
-      <li>
-        Click <em>JavaScript</em>
-      </li>
-      <li>
-        At the top, turn off <em>Allowed</em>.
-      </li>
-    </ol>
-    <h2 id="ie">Internet Exploder</h2>
-    <ol>
-      <li>
-        Visit <a href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/"
-    title="ungoogled-chromium">https://ungoogled-software.github.io/ungoogled-chromium-binaries/</a>
-      </li>
-      <li>Download the latest version available for your platform and install it</li>
-      <li>
-        Follow the steps to <a href="https://github.com/NeverDecaf/chromium-web-store?tab=readme-ov-file#read-this-first"
-    title="Chromium Web Store">install the Chromium Web Store</a>
-      </li>
-      <li>
-        Continue by <a href="#ublock" title="uBlock Origin">installing and configuring uBlock Origin</a>
-      </li>
-    </ol>
-    <h2 id="devs">Instructions for web developers</h2>
-    <p>
-      You may want to consider linking to this site, to educate any script-enabled users on how to disable JavaScript in some of the most commonly used browsers. The following code uses <em>scare tactics</em> to do so.
-    </p>
-    <p>
-      When added to your website, it will change the icon and the title of your website's tab to some of the most unhinged things imaginable once the user sends your tab to the background. Upon re-activation, the script will display a popover to the user informing them about the <em>joke</em> and referring them to this initiative.
-    </p>
-    <p>
-      You are free to use the code below and modify it according to your needs. For a demonstration of how this script behaves, see <a href="https://xn--gckvb8fzb.com" title="マリウス">this website</a>.
-    </p>
-    <pre>
-<code>
-&lt;script&gt;
-function favicons() {
-  this.hidden = "hidden";
-  this.visibilityChange = "visibilitychange";
-  this.favicon = document.querySelector("[rel='shortcut icon']").href;
-  this.title = document.title;
-  this.wasSpoofed = false;
-  this.spoofed = [];
 
-  this.services = {
-    sy: () => {
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Disable JavaScript</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/djs.css">
+  <meta name="description" content="Instructions on how to disable (deactivate) JavaScript in web browser and why.">
+  <meta property="og:site_name" content="Disable JavaScript">
+  <meta property="og:title" content="Disable JavaScript">
+  <meta property="og:description"
+    content="Instructions on how to disable (deactivate) JavaScript in web browser and why.">
+  <meta property="og:image" content="https://disable-javascript.org/images/disable-javascript.webp">
+  <meta property="og:url" content="https://disable-javascript.org">
+  <meta property="og:type" content="website">
+  <meta name="twitter:title" content="Disable JavaScript">
+  <meta name="twitter:description"
+    content="Instructions on how to disable (deactivate) JavaScript in web browser and why.">
+  <meta name="twitter:image" content="https://disable-javascript.org/images/disable-javascript.webp">
+  <meta name="twitter:image:alt" content="Disable JavaScript">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon.ico?123" sizes="any">
+  <meta name="theme-color" content="#fffffff">
+</head>
+
+<body>
+  <h1>How to disable JavaScript in your browser</h1>
+  <p>
+    Nowadays almost all web pages contain JavaScript, a scripting programming language that runs arbitrary code, through
+    the web browser, on the visitor's computer. It is supposed to make web pages functional for specific purposes but it
+    has proven its potential to cause significant harm to users time and time again:
+  </p>
+  <ul>
+    <li>
+      <a href="https://nvd.nist.gov/vuln/detail/cve-2026-85046">Type confusion in V8 in Google Chrome prior to
+        152.0.7977.82 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML
+        page.</a>
+    </li>
+    <li>
+      <a
+        href="https://www.bleepingcomputer.com/news/security/popular-javascript-library-expr-eval-vulnerable-to-rce-flaw/">Popular
+        JavaScript library expr-eval vulnerable to RCE flaw</a>
+    </li>
+    <li>
+      <a href="https://www.csoonline.com/article/4086415/malicious-npm-packages-contain-vidar-infostealer-2.html">Malicious
+        npm packages contain Vidar infostealer</a>
+    </li>
+    <li>
+      <a href="https://thehackernews.com/2025/09/40-npm-packages-compromised-in-supply.html">Self-Replicating Worm Hits
+        180+ npm Packages to Steal Credentials in Latest Supply Chain Attack</a>
+    </li>
+    <li>
+      <a href="https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised">npm debug and chalk packages
+        compromised</a>
+    </li>
+    <li>
+      <a href="https://www.mozilla.org/en-US/security/advisories/mfsa2025-64/#CVE-2025-9181">CVE-2025-9181:
+        Uninitialized memory in the JavaScript Engine component</a>
+    </li>
+    <li>
+      <a href="https://www.securityweek.com/high-severity-vulnerabilities-patched-in-chrome-firefox/">High-Severity
+        Vulnerabilities Patched in Chrome, Firefox</a>
+    </li>
+    <li>
+      <a href="https://cvefeed.io/vuln/detail/CVE-2025-7656">CVE-2025-7656: Google Chrome V8 Integer Overflow Heap
+        Corruption</a>
+    </li>
+    <li>
+      <a href="https://www.mozilla.org/en-US/security/advisories/mfsa2025-59/#CVE-2025-8027">CVE-2025-8027: JavaScript
+        engine only wrote partial return value to stack</a>
+    </li>
+    <li>
+      <a
+        href="https://www.thezdi.com/blog/2025/7/14/cve-2025-4919-corruption-via-math-space-in-mozilla-firefohttps://www.thezdi.com/blog/2025/7/14/cve-2025-4919-corruption-via-math-space-in-mozilla-firefoxx">CVE-2025-4919:
+        Corruption via Math Space in Mozilla Firefox</a>
+    </li>
+    <li>
+      <a href="https://thehackernews.com/2025/07/google-patches-critical-zero-day-flaw.html">Chrome Zero-Day
+        CVE-2025-6554 Under Active Attack — Google Issues Security Update</a>
+    </li>
+    <li>
+      <a href="https://thehackernews.com/2025/06/new-chrome-zero-day-actively-exploited.html">New Chrome Zero-Day
+        Actively Exploited; Google Issues Emergency Out-of-Band Patch</a>
+    </li>
+    <li>
+      <a href="https://thehackernews.com/2025/05/new-chrome-vulnerability-enables-cross.html">New Chrome Vulnerability
+        Enables Cross-Origin Data Leak via Loader Referrer Policy</a>
+    </li>
+    <li>
+      <a href="https://www.rapid7.com/db/vulnerabilities/google-chrome-cve-2025-0291/">Google Chrome Vulnerability:
+        CVE-2025-0291 Type Confusion in V8</a>
+    </li>
+    <li>
+      <a href="https://leaky.page">This site hosts a proof of concept for the Spectre vulnerability written in
+        JavaScript</a>
+    </li>
+    <li>
+      <a href="https://github.com/isec-tugraz/rowhammerjs">Rowhammer.js - A Remote Software-Induced Fault Attack in
+        JavaScript</a>
+    </li>
+    <li>
+      ...
+    </li>
+  </ul>
+  <p>
+    Here you can find instructions on how to disable (deactivate) JavaScript by default in five most commonly used
+    browsers, and how to only enable it for websites that you know and trust.
+  </p>
+  <hr>
+  <ul class="browsers">
+    <li class="browser">
+      <a class="browser chrome" href="#chrome" title="Chrome &amp; Chromium"></a>
+    </li>
+    <li class="browser">
+      <a class="browser firefox" href="#firefox" title="Firefox"></a>
+    </li>
+    <li class="browser">
+      <a class="browser safari" href="#safari" title="Safari"></a>
+    </li>
+    <li class="browser">
+      <a class="browser opera" href="#opera" title="Opera"></a>
+    </li>
+    <li class="browser">
+      <a class="browser ie" href="#ie" title="Internet Exploder"></a>
+    </li>
+  </ul>
+  <hr>
+  <h2 id="ublock">uBlock Origin</h2>
+  <p>
+    If you are using Firefox, Opera, Microsoft Edge or any Chromium-based browser that still supports Manifest v2 and
+    hence is able to run <a href="https://ublockorigin.com" title="uBlock Origin">uBlock Origin</a> you can instead
+    follow these steps:
+  </p>
+  <ol>
+    <li>Click the uBlock Origin icon to open the popup menu and click the gears icon to open the dashboard</li>
+    <li>
+      Click <em>Settings</em>
+    </li>
+    <li>
+      Scroll down to <em>Default behavior</em> and check <em>Disable JavaScript</em>
+    </li>
+  </ol>
+  <p>
+    When browsing the web and requiring JavaScript for a website that you trust, click the uBlock Origin icon and click
+    the rightmost <em>"&lt;/&gt;"</em> icon, then press the <em>refresh</em> button above it to reload the site with
+    JavaScript enabled.
+  </p>
+  <h2 id="noscript">NoScript</h2>
+  <p>
+    If you are using Firefox, Opera, Microsoft Edge or any Chromium-based browser download <a
+      href="https://noscript.net/getit/" title="NoScript">NoScript</a> and familiarize yourself with its <a
+      href="https://noscript.net/usage/" title="NoScript Usage">usage</a>.
+  </p>
+  <h2 id="chrome">Chrome &amp; Chromium</h2>
+  <ol>
+    <li>Click the ⋮ on the top right to open the menu</li>
+    <li>
+      Click <em>Settings</em>
+    </li>
+    <li>
+      On the left side menu, click <em>Privacy and security</em>
+    </li>
+    <li>
+      Click <em>Site settings</em>
+    </li>
+    <li>
+      Scroll down to <em>Content</em> and click <em>JavaScript</em>
+    </li>
+    <li>
+      Under <em>Default behavior</em> select <em>Don't allow sites to use JavaScript</em>
+    </li>
+  </ol>
+  <p>
+    When browsing the web and requiring JavaScript for a website that you trust, click the <em>"i"</em> button on the
+    left side of the address bar and click <em>Site settings</em>. There, change the value for <em>JavaScript</em> to
+    <em>Allow</em>.
+  </p>
+  <h2 id="firefox">Firefox</h2>
+  <ol>
+    <li>
+      In the address bar, type <code>about:config</code> and press <em>Enter</em>
+    </li>
+    <li>
+      Click <em>"I'll be careful, I promise"</em> if a warning message appears
+    </li>
+    <li>
+      In the search box, search for <code>javascript.enabled</code>
+    </li>
+    <li>
+      Toggle the <code>javascript.enabled</code> preference (right-click and select <em>Toggle</em> or double-click the
+      preference) to change the value from <em>true</em> to <em>false</em>
+    </li>
+  </ol>
+  <p>
+    Because this turns off JavaScript globally in Firefox, it is advisable to use <a href="#ublock"
+      title="uBlock Origin">uBlock Origin</a> instead.
+  </p>
+  <h2 id="safari">Safari</h2>
+  <ol>
+    <li>
+      On the web browser menu click on the <em>Edit</em> and select <em>Preferences</em>
+    </li>
+    <li>
+      In the <em>Preferences</em> window select the <em>Security</em> tab
+    </li>
+    <li>
+      In the <em>Security</em> tab section <em>Web content</em> unmark the <em>Enable JavaScript</em> checkbox
+    </li>
+  </ol>
+  <h2 id="opera">Opera</h2>
+  <ol>
+    <li>
+      Go to <em>Settings</em>
+    </li>
+    <li>
+      Click <em>Advanced</em> in the left sidebar, and click <em>Privacy & security</em>
+    </li>
+    <li>
+      Under <em>Privacy and security</em>, click <em>Site settings</em>
+    </li>
+    <li>
+      Click <em>JavaScript</em>
+    </li>
+    <li>
+      At the top, turn off <em>Allowed</em>.
+    </li>
+  </ol>
+  <h2 id="ie">Internet Exploder</h2>
+  <ol>
+    <li>
+      Visit <a href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/"
+        title="ungoogled-chromium">https://ungoogled-software.github.io/ungoogled-chromium-binaries/</a>
+    </li>
+    <li>Download the latest version available for your platform and install it</li>
+    <li>
+      Follow the steps to <a href="https://github.com/NeverDecaf/chromium-web-store?tab=readme-ov-file#read-this-first"
+        title="Chromium Web Store">install the Chromium Web Store</a>
+    </li>
+    <li>
+      Continue by <a href="#ublock" title="uBlock Origin">installing and configuring uBlock Origin</a>
+    </li>
+  </ol>
+  <h2 id="devs">Instructions for web developers</h2>
+  <p>
+    You may want to consider linking to this site, to educate any script-enabled users on how to disable JavaScript in
+    some of the most commonly used browsers. The following code uses <em>scare tactics</em> to do so.
+  </p>
+  <p>
+    When added to your website, it will change the icon and the title of your website's tab to some of the most unhinged
+    things imaginable once the user sends your tab to the background. Upon re-activation, the script will display a
+    popover to the user informing them about the <em>joke</em> and referring them to this initiative.
+  </p>
+  <p>
+    You are free to use the code below and modify it according to your needs. For a demonstration of how this script
+    behaves, see <a href="https://xn--gckvb8fzb.com" title="マリウス">this website</a>.
+  </p>
+  <pre>
+    <code>
+      &lt;script&gt;
+      function favicons() {
+      this.hidden = "hidden";
+      this.visibilityChange = "visibilitychange";
+      this.favicon = document.querySelector("[rel='shortcut icon']").href;
+      this.title = document.title;
+      this.wasSpoofed = false;
+      this.spoofed = [];
+
+      this.services = {
+      sy: () => {
       let title =
-        "Official Church of Scientology: Difficulties on the Job - Online Course";
+      "Official Church of Scientology: Difficulties on the Job - Online Course";
       let favicon = "/images/disablejs/sy.png";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    cdc: () => {
+      },
+      cdc: () => {
       let title = "Ask HN: How could I safely contact drug cartels?";
       let favicon = "/images/disablejs/hn.png";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    rps: () => {
+      },
+      rps: () => {
       let title = "rust programming socks - Google Shopping";
       let favicon = "/images/disablejs/go.ico";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    aec: () => {
+      },
+      aec: () => {
       let title = "Adult entertainment clubs - Google Maps";
       let favicon = "/images/disablejs/gm.png";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    pul: () => {
+      },
+      pul: () => {
       let title = "Pick up lines suggestions - ChatGPT";
       let favicon = "/images/disablejs/cgpt.png";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    fes: () => {
+      },
+      fes: () => {
       let title = "The Flat Earth Society";
       let favicon = "/images/disablejs/fes.png";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    tsm: () => {
+      },
+      tsm: () => {
       let title = "Amazon.com: taylor swift merch";
       let favicon = "/images/disablejs/az.ico";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    wp: () => {
+      },
+      wp: () => {
       let title = "Amazon.com: waifu pillow";
       let favicon = "/images/disablejs/az.ico";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    rwsb: () => {
+      },
+      rwsb: () => {
       let title = "r/wallstreetbets on Reddit";
       let favicon = "/images/disablejs/rd.png";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    iw: () => {
+      },
+      iw: () => {
       let title = "Infowars: There's a War on For Your Mind!";
       let favicon = "/images/disablejs/iw.png";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    tac: () => {
+      },
+      tac: () => {
       let title = "The Anarchist Cookbook by William Powell | Goodreads";
       let favicon = "/images/disablejs/gr.png";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    nxfs: () => {
+      },
+      nxfs: () => {
       let title = "Fifty Shades of Grey | Netflix";
       let favicon = "/images/disablejs/nx.ico";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    jbn: () => {
+      },
+      jbn: () => {
       let title = "jeff bezos nudes - Google Image Search";
       let favicon = "/images/disablejs/go.ico";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    nggyu: () => {
+      },
+      nggyu: () => {
       let title = "Rick Astley - Never Gonna Give You Up - YouTube";
       let favicon = "/images/disablejs/yt.ico";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    beast: () => {
+      },
+      beast: () => {
       let title = "MrBeast en Español - YouTube";
       let favicon = "/images/disablejs/yt.ico";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-    ftx: () => {
+      },
+      ftx: () => {
       let title = "FTX Cryptocurrency Exchange";
       let favicon = "/images/disablejs/ftx.png";
       return {
-        title,
-        favicon,
+      title,
+      favicon,
       };
-    },
-  };
+      },
+      };
 
-  this.enabledServices = Object.keys(this.services);
+      this.enabledServices = Object.keys(this.services);
 
-  this.init = function () {
-    if (typeof document.mozHidden !== "undefined") {
+      this.init = function () {
+      if (typeof document.mozHidden !== "undefined") {
       this.hidden = "mozHidden";
       this.visibilityChange = "mozvisibilitychange";
-    } else if (typeof document.msHidden !== "undefined") {
+      } else if (typeof document.msHidden !== "undefined") {
       this.hidden = "msHidden";
       this.visibilityChange = "msvisibilitychange";
-    } else if (typeof document.webkitHidden !== "undefined") {
+      } else if (typeof document.webkitHidden !== "undefined") {
       this.hidden = "webkitHidden";
       this.visibilityChange = "webkitvisibilitychange";
-    }
-    document.addEventListener(
+      }
+      document.addEventListener(
       this.visibilityChange,
       this.handler.bind(this),
       false,
-    );
-  };
+      );
+      };
 
-  this.default = function () {
-    let title = this.title;
-    let favicon = this.favicon;
-    this.update({
+      this.default = function () {
+      let title = this.title;
+      let favicon = this.favicon;
+      this.update({
       title,
       favicon,
-    });
-  };
+      });
+      };
 
-  this.update = function (data) {
-    let cacheBuster = "?v=" + Math.round(Math.random() * 10000000);
-    let link = document.createElement("link");
-    link.type = "image/x-icon";
-    link.rel = "shortcut icon";
-    link.href = data.favicon + cacheBuster;
-    document
+      this.update = function (data) {
+      let cacheBuster = "?v=" + Math.round(Math.random() * 10000000);
+      let link = document.createElement("link");
+      link.type = "image/x-icon";
+      link.rel = "shortcut icon";
+      link.href = data.favicon + cacheBuster;
+      document
       .getElementsByTagName("head")[0]
       .querySelector("[rel='shortcut icon']")
       .remove();
-    document.getElementsByTagName("head")[0].appendChild(link);
-    document.title = data.title;
-    if (this.wasSpoofed === true) {
+      document.getElementsByTagName("head")[0].appendChild(link);
+      document.title = data.title;
+      if (this.wasSpoofed === true) {
       document.getElementById("disablejs").style.display = "block";
       document.getElementById("disablejs").innerHTML = `
-        &lt;p&gt;
-          &lt;strong&gt;(CLICK/TAP THIS OVERLAY ANYWHERE TO CLOSE IT)&lt;/strong&gt;
-        &lt;/p&gt;
-        &lt;p&gt;
-          Ah, yes. That moment. The one that sends a chill down your spine and makes you do a quick, frantic scan of your surroundings, hoping nobody noticed that brief, undeniable flash of panic on your face. You know &lt;strong&gt;exactly&lt;/strong&gt; what I'm talking about: That split second when you spot &lt;em&gt;that website&lt;/em&gt; in your browser's tab bar.
-        &lt;/p&gt;
-        &lt;p&gt;
-          Heart pounding, you dart a glance at your coworkers, your friends, your partner, or anyone in the vicinity, searching for signs of judgment or, worse, curiosity. No one's looking, but somehow, you feel like everyone is. It's like the universe knows, and it's giggling behind its hand. You quickly click over to the tab, praying, hoping it's not what you think it is.
-        &lt;/p&gt;
-        &lt;p&gt;
-          And then, oh sweet relief, it's not &lt;strong&gt;that&lt;/strong&gt;. But now, a whole new, equally horrible truth sinks in. You've just been pranked by the cruel, merciless soul who crafted this infernal website. You, my friend, have just experienced the finest torture modern web technology has to offer: Unwarranted suspense, followed by the revelation that &lt;em&gt;nothing is as it seems&lt;/em&gt;.
-        &lt;/p&gt;
-        &lt;p&gt;
-          JavaScript, you son of a smoking gun. The great trickster of the web, slinking in the background, making you believe that your browsing experience is smooth and simple, only to slap you with a pop-up, a subtle redirect, or worse, a blinking ad that's seemingly impossible to close.
-        &lt;/p&gt;
-        &lt;p&gt;
-          And here you are, caught in the endless cycle of knowing you should turn JavaScript off but just &lt;strong&gt;not&lt;/strong&gt; caring enough to actually do it. It's like knowing you should stop eating those extra chips but doing it anyway. But this? This is the universe giving you a little nudge, perhaps a &lt;em&gt;not-so-subtle&lt;/em&gt; one, reminding you of your folly.
-        &lt;/p&gt;
-        &lt;p&gt;
-          So, here it is, loud and clear: &lt;strong&gt;Turn JavaScript off, now, and only allow it on websites you trust!&lt;/strong&gt; Save your sanity, preserve your dignity, and maybe give your browser a fighting chance at actually doing what &lt;strong&gt;you&lt;/strong&gt; want it to do. Because if you don't, the next time you see that icon, your heart might not only drop, it might skip a beat or two.
-        &lt;/p&gt;
-        &lt;p&gt;
-          &lt;a href="https://disable-javascript.org" target="_self" title="disable-javascript.org"&gt;More information here.&lt;/a&gt;
-        &lt;/p&gt;
-        &lt;p&gt;
-          &lt;strong&gt;(CLICK/TAP THIS OVERLAY ANYWHERE TO CLOSE IT)&lt;/strong&gt;
-        &lt;/p&gt;
-        `;
-    }
-  };
-
-  this.spoof = function () {
-    let i = 0;
-    if (this.spoofed.length === this.enabledServices.length) {
-      this.spoofed.length = 0;
-    }
-    for (let es = 0; es < this.enabledServices.length; es++) {
-      i = Math.round(Math.random() * (this.enabledServices.length - 1));
-      if (this.spoofed.includes(i) === false) {
-        break;
+      &lt;p&gt;
+      &lt;strong&gt;(CLICK/TAP THIS OVERLAY ANYWHERE TO CLOSE IT)&lt;/strong&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+      Ah, yes. That moment. The one that sends a chill down your spine and makes you do a quick, frantic scan of your
+      surroundings, hoping nobody noticed that brief, undeniable flash of panic on your face. You know
+      &lt;strong&gt;exactly&lt;/strong&gt; what I'm talking about: That split second when you spot &lt;em&gt;that
+      website&lt;/em&gt; in your browser's tab bar.
+      &lt;/p&gt;
+      &lt;p&gt;
+      Heart pounding, you dart a glance at your coworkers, your friends, your partner, or anyone in the vicinity,
+      searching for signs of judgment or, worse, curiosity. No one's looking, but somehow, you feel like everyone is.
+      It's like the universe knows, and it's giggling behind its hand. You quickly click over to the tab, praying,
+      hoping it's not what you think it is.
+      &lt;/p&gt;
+      &lt;p&gt;
+      And then, oh sweet relief, it's not &lt;strong&gt;that&lt;/strong&gt;. But now, a whole new, equally horrible
+      truth sinks in. You've just been pranked by the cruel, merciless soul who crafted this infernal website. You, my
+      friend, have just experienced the finest torture modern web technology has to offer: Unwarranted suspense,
+      followed by the revelation that &lt;em&gt;nothing is as it seems&lt;/em&gt;.
+      &lt;/p&gt;
+      &lt;p&gt;
+      JavaScript, you son of a smoking gun. The great trickster of the web, slinking in the background, making you
+      believe that your browsing experience is smooth and simple, only to slap you with a pop-up, a subtle redirect, or
+      worse, a blinking ad that's seemingly impossible to close.
+      &lt;/p&gt;
+      &lt;p&gt;
+      And here you are, caught in the endless cycle of knowing you should turn JavaScript off but just
+      &lt;strong&gt;not&lt;/strong&gt; caring enough to actually do it. It's like knowing you should stop eating those
+      extra chips but doing it anyway. But this? This is the universe giving you a little nudge, perhaps a
+      &lt;em&gt;not-so-subtle&lt;/em&gt; one, reminding you of your folly.
+      &lt;/p&gt;
+      &lt;p&gt;
+      So, here it is, loud and clear: &lt;strong&gt;Turn JavaScript off, now, and only allow it on websites you
+      trust!&lt;/strong&gt; Save your sanity, preserve your dignity, and maybe give your browser a fighting chance at
+      actually doing what &lt;strong&gt;you&lt;/strong&gt; want it to do. Because if you don't, the next time you see
+      that icon, your heart might not only drop, it might skip a beat or two.
+      &lt;/p&gt;
+      &lt;p&gt;
+      &lt;a href="https://disable-javascript.org" target="_self" title="disable-javascript.org"&gt;More information
+      here.&lt;/a&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+      &lt;strong&gt;(CLICK/TAP THIS OVERLAY ANYWHERE TO CLOSE IT)&lt;/strong&gt;
+      &lt;/p&gt;
+      `;
       }
-    }
-    this.spoofed.push(i);
-    let service = this.enabledServices[i];
-    if (service && this.services[service]) {
-      this.update(this.services[service]());
-    }
-    this.wasSpoofed = true;
-  };
+      };
 
-  this.handler = function () {
-    if (document[this.hidden]) {
-      this.spoof();
-    } else {
-      this.default();
-    }
-  };
-
-  this.init();
-}
-
-function closeDisablejsInfo() {
-  document.getElementById("disablejs").style.display = "none";
-}
-&lt;/script&gt;
-&lt;div id="disablejs" onclick="closeDisablejsInfo()"&gt;&lt;/div&gt;
-</code>
-    </pre>
-    <p>
-      Make sure to style <code>div#disablejs</code> according to your needs. The required assets can be found <a href="favicons.tar.gz" title="favicons.tar.gz">here</a> and should be extracted into the folder of your website that is accessible via <code>/images/disablejs/</code>. Alternatively, feel free to adjust the <code>let favicon = "...";</code> variables.
-    </p>
-    <p>
+      this.spoof = function () {
+      let i = 0;
+      if (this.spoofed.length === this.enabledServices.length) {
+      this.spoofed.length = 0;
+      }
+      for (let es = 0; es < this.enabledServices.length; es++) { i=Math.round(Math.random() *
+        (this.enabledServices.length - 1)); if (this.spoofed.includes(i)===false) { break; } } this.spoofed.push(i); let
+        service=this.enabledServices[i]; if (service && this.services[service]) { this.update(this.services[service]());
+        } this.wasSpoofed=true; }; this.handler=function () { if (document[this.hidden]) { this.spoof(); } else {
+        this.default(); } }; this.init(); } function closeDisablejsInfo() {
+        document.getElementById("disablejs").style.display="none" ; } &lt;/script&gt; &lt;div id="disablejs"
+        onclick="closeDisablejsInfo()" &gt;&lt;/div&gt; </code>
+  </pre>
+  <p>
+    Make sure to style <code>div#disablejs</code> according to your needs. The required assets can be found <a
+      href="favicons.tar.gz" title="favicons.tar.gz">here</a> and should be extracted into the folder of your website
+    that is accessible via <code>/images/disablejs/</code>. Alternatively, feel free to adjust the <code>let favicon =
+      "...";</code> variables.
+  </p>
+  <p>
     The above code was heavily inspired by <s><a href="https://sizeof.cat/post/tricks-with-web-browser-tabs/"
         title="sizeof.cat">sizeof.cat</a></s> (which sadly doesn't exist anymore).
-    </p>
-    <hr>
-    <p>
-      <a href="https://disable-javascript.org" title="disable-javascript.org">disable-javascript.org</a> is an initiative by <a href="https://xn--gckvb8fzb.com" title="マリウス">マリウス</a>.
-    </p>
-  </body>
+  </p>
+  <hr>
+  <p>
+    <a href="https://disable-javascript.org" title="disable-javascript.org">disable-javascript.org</a> is an initiative
+    by <a href="https://xn--gckvb8fzb.com" title="マリウス">マリウス</a>.
+  </p>
+</body>
+
 </html>
